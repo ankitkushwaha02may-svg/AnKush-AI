@@ -1,6 +1,8 @@
 package com.ncorti.kotlin.template.app
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ncorti.kotlin.template.app.databinding.ActivityMainBinding
 
@@ -10,25 +12,30 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         supportActionBar?.title = "AnKush AI"
 
+        // AI Chat
         binding.chatButton.setOnClickListener {
-            // Chat Screen
+            startActivity(Intent(this, ChatActivity::class.java))
         }
 
+        // AI Image Generator
         binding.imageButton.setOnClickListener {
-            // Image Generator
+            Toast.makeText(this, "Image Generator Coming Soon", Toast.LENGTH_SHORT).show()
         }
 
+        // Voice Assistant
         binding.voiceButton.setOnClickListener {
-            // Voice Assistant
+            Toast.makeText(this, "Voice Assistant Coming Soon", Toast.LENGTH_SHORT).show()
         }
 
+        // Settings
         binding.settingsButton.setOnClickListener {
-            // Settings
+            Toast.makeText(this, "Settings Coming Soon", Toast.LENGTH_SHORT).show()
         }
     }
 }
